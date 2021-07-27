@@ -2,9 +2,11 @@
 <h1>Angular Component</h1>
 <div class="mt-1">
   <app-input
+    [text]="title"
     (onAddPost)='addTitle($event)'
   ></app-input>
   <app-input
+    [text]="text"
     (onAddPost)='addText($event)'
   ></app-input>
 </div>

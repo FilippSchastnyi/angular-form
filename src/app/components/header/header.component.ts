@@ -1,6 +1,5 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {FormServiceService} from "../form-service.service";
-import {Post} from "../post";
 
 @Component({
   selector: 'app-header',
@@ -10,29 +9,36 @@ import {Post} from "../post";
 
 
 export class HeaderComponent implements OnInit {
-  post:any = []
+
+  title: string = '';
+  text: string = '';
 
   constructor(private formPostService: FormServiceService) {
 
   }
 
   addTitle(title:any) {
-    this.post.title = title
+    this.title = title
   }
 
   addText(text: string) {
-    this.post.text = text
+    this.text = text
   }
 
   addPost(){
-    if (this.post.title.trim() && this.post.text.trim()){
-      this.formPostService.setPost(this.post)
+    const post = {
+      title : this.title,
+      text : this.text
+    }
+    if (this.title.trim() && this.text.trim()){
+      this.formPostService.setPost(post)
       console.log(this.formPostService.getPost())
-      this.post = []
     }
     else {
       console.log('Некоректно!')
     }
+    this.title =''
+    this.text =''
   }
 
   ngOnInit(): void {

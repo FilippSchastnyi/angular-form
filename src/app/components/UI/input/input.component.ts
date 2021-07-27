@@ -1,4 +1,4 @@
-import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 
 @Component({
   selector: 'app-input',
@@ -7,7 +7,7 @@ import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 })
 export class InputComponent implements OnInit {
 @Output() onAddPost:EventEmitter<any> = new EventEmitter
-text = ""
+@Input() text = ""
   constructor() { }
 
   ngOnInit(): void {
