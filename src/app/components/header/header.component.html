@@ -2,12 +2,10 @@
 <h1>Angular Component</h1>
 <div class="mt-1">
   <app-input
-   [Title]="Title"
-  (onAddTitle) = 'addTitle($event)'
+    (onAddPost)='addTitle($event)'
   ></app-input>
   <app-input
-    [Title]="Text"
-    (onAddTitle) = 'addText($event)'
+    (onAddPost)='addText($event)'
   ></app-input>
 </div>
 
@@ -15,7 +13,7 @@
 <ngButton
 [type]="'primary'"
 [size]="'sm'"
-(btnClick)="addPost()"
+(btnClick) = 'addPost()'
 >
 Добавить пост
 </ngButton>

@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 
 @Component({
   selector: 'app-input',
@@ -6,8 +6,8 @@ import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
   styleUrls: ['./input.component.scss']
 })
 export class InputComponent implements OnInit {
-@Output() onAddTitle:EventEmitter<any> = new EventEmitter
-@Input() Title = ""
+@Output() onAddPost:EventEmitter<any> = new EventEmitter
+text = ""
   constructor() { }
 
   ngOnInit(): void {
@@ -15,6 +15,6 @@ export class InputComponent implements OnInit {
   }
 
   onKeyDown(){
-    this.onAddTitle.emit(this.Title)
+    this.onAddPost.emit(this.text)
   }
 }
