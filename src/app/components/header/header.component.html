@@ -1,0 +1,24 @@
+<div class="header">
+<h1>Angular Component</h1>
+<div class="mt-1">
+  <app-input
+   [Title]="Title"
+  (onAddTitle) = 'addTitle($event)'
+  ></app-input>
+  <app-input
+    [Title]="Text"
+    (onAddTitle) = 'addText($event)'
+  ></app-input>
+</div>
+
+<div class="m-2">
+<ngButton
+[type]="'primary'"
+[size]="'sm'"
+(btnClick)="addPost()"
+>
+Добавить пост
+</ngButton>
+
+</div>
+</div>
