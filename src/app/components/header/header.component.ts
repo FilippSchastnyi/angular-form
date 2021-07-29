@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, ContentChild, ElementRef, OnInit} from '@angular/core';
 import {FormServiceService} from "../form-service.service";
 
 @Component({
@@ -9,6 +9,7 @@ import {FormServiceService} from "../form-service.service";
 
 
 export class HeaderComponent implements OnInit {
+
 
   title: string = '';
   text: string = '';
@@ -39,6 +40,10 @@ export class HeaderComponent implements OnInit {
     }
     this.title =''
     this.text =''
+  }
+
+  focusToTitle(){
+
   }
 
   ngOnInit(): void {

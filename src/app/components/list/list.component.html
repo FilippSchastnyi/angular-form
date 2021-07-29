@@ -1,8 +1,15 @@
-<div>
+<div *ngFor="let p of post">
   <h2>
-    {{post.title}}
+    {{p.title}}
   </h2>
   <p>
-    {{post.text}}
+    {{p.text}}
   </p>
+  <ngButton
+    [type]="'primary'"
+    [size]="'sm'"
+    (click)= removePost(p)
+  >
+    Удалить
+  </ngButton>
 </div>

@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild} from '@angular/core';
 
 @Component({
   selector: 'app-input',
@@ -8,11 +8,10 @@ import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 export class InputComponent implements OnInit {
 @Output() onAddPost:EventEmitter<any> = new EventEmitter
 @Input() text = ""
+  @ViewChild('inputElement', {static: true}) inputRef: ElementRef
   constructor() { }
 
-  ngOnInit(): void {
-
-  }
+  ngOnInit(): void {}
 
   onKeyDown(){
     this.onAddPost.emit(this.text)

@@ -12,11 +12,13 @@ export class FormServiceService {
   post: Post[] = [
     {
       title: 'This is tile',
-      text: 'This is text'
+      text: 'This is text',
+      id: 1
     },
     {
       title: 'This is tile of post 2',
-      text: 'This is text of post 2'
+      text: 'This is text of post 2',
+      id: 2
     }
   ]
 
@@ -26,5 +28,9 @@ export class FormServiceService {
 
   getPost(){
     return this.post
+  }
+
+  deletePost(id){
+    this.post = this.post.filter( p => p.id !== id )
   }
 }

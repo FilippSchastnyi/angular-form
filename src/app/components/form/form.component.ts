@@ -10,9 +10,7 @@ import {Post} from "../post";
 })
 export class FormComponent implements OnInit {
 
-  posts:Post[]
-  constructor(private formService : FormServiceService) {
-  this.posts = formService.getPost()
+  constructor() {
   }
   ngOnInit(): void {
   }
