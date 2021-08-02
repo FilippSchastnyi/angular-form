@@ -18,7 +18,7 @@ export class AppComponent implements OnInit {
                 Validators.required,
                 Validators.minLength(6)
             ])
-        })
+        }) 
     }
 
     submit() {
